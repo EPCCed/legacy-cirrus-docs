@@ -11,6 +11,11 @@ Cirrus is available to industry and academic researchers. For
 information on how to get access to the system please see the [Cirrus
 website](http://www.cirrus.ac.uk).
 
+!!! important
+    This documentation is for the old Cirrus SGI ICE XA system that
+    ceases operation on 8 December 2025. The
+    [documentation for the new Cirrus EX4000 system are available](https://docs.cirrus.ac.uk)
+
 The Cirrus facility is based around an SGI ICE XA system. There are 280
 standard compute nodes, 1 high memory compute node and 38 GPU compute
 nodes. Each standard compute node has 256 GiB of memory and contains two
