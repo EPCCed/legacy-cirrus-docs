@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2047,14 +2047,14 @@ Number of workers to start on your local machine (NumWorkers)        = 6
 Number of computational threads to use on each worker (NumThreads)   = 1
 </code></pre></div>
 <p>The <em>testp.m</em> program sets <em>NumWorkers</em> to 3 and <em>NumThreads</em> to 2 :</p>
-<div class="highlight"><pre><span></span><code><span class="n">cirrus_cluster</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">&#39;local&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">cirrus_cluster</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">'local'</span><span class="p">);</span>
 <span class="n">ncores</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">cirrus_cluster</span><span class="p">.</span><span class="n">NumWorkers</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cirrus_cluster</span><span class="p">.</span><span class="n">NumThreads</span><span class="p">;</span>
 <span class="n">cirrus_cluster</span><span class="p">.</span><span class="n">NumWorkers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
 <span class="n">cirrus_cluster</span><span class="p">.</span><span class="n">NumThreads</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="nb">fprintf</span><span class="p">(</span><span class="s">&quot;NumWorkers = %d NumThreads = %d ncores = %d\n&quot;</span><span class="p">,</span><span class="n">cirrus_cluster</span><span class="p">.</span><span class="n">NumWorkers</span><span class="p">,</span><span class="n">cirrus_cluster</span><span class="p">.</span><span class="n">NumThreads</span><span class="p">,</span><span class="n">ncores</span><span class="p">);</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">"NumWorkers = %d NumThreads = %d ncores = %d\n"</span><span class="p">,</span><span class="n">cirrus_cluster</span><span class="p">.</span><span class="n">NumWorkers</span><span class="p">,</span><span class="n">cirrus_cluster</span><span class="p">.</span><span class="n">NumThreads</span><span class="p">,</span><span class="n">ncores</span><span class="p">);</span>
 <span class="k">if</span><span class="w"> </span><span class="n">cirrus_cluster</span><span class="p">.</span><span class="n">NumWorkers</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cirrus_cluster</span><span class="p">.</span><span class="n">NumThreads</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">ncores</span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;NumWorkers * NumThreads &gt; ncores&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Exiting&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">"NumWorkers * NumThreads &gt; ncores"</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">disp</span><span class="p">(</span><span class="s">"Exiting"</span><span class="p">);</span>
 <span class="w">    </span><span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="k">end</span>
 <span class="n">saveProfile</span><span class="p">(</span><span class="n">cirrus_cluster</span><span class="p">);</span>
@@ -2100,10 +2100,10 @@ applications. For these versions of MATLAB, if you need to use the
 <span class="title-ref">-r</span> or
 <span class="title-ref">-batch</span> flag replace this line in your
 Slurm script, i.e.:</p>
-<div class="highlight"><pre><span></span><code><span class="n">matlab_wrapper</span><span class="w"> </span><span class="o">-</span><span class="n">nodisplay</span><span class="w"> </span><span class="o">-</span><span class="n">nodesktop</span><span class="w"> </span><span class="o">-</span><span class="n">batch</span><span class="w"> </span><span class="s">&quot;main_simulated_data_FINAL_clean(&quot;</span>$<span class="n">ind</span><span class="s">&quot;,&quot;</span>$<span class="nb">gamma</span><span class="s">&quot;,&quot;</span>$<span class="n">rw</span><span class="s">&quot;,&#39;&quot;</span>$<span class="n">SLURM_JOB_ID</span>&quot;<span class="s">&#39;</span><span class="err">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">matlab_wrapper</span><span class="w"> </span><span class="o">-</span><span class="n">nodisplay</span><span class="w"> </span><span class="o">-</span><span class="n">nodesktop</span><span class="w"> </span><span class="o">-</span><span class="n">batch</span><span class="w"> </span><span class="s">"main_simulated_data_FINAL_clean("</span>$<span class="n">ind</span><span class="s">","</span>$<span class="nb">gamma</span><span class="s">","</span>$<span class="n">rw</span><span class="s">",'"</span>$<span class="n">SLURM_JOB_ID</span>"<span class="s">'</span><span class="err">)</span>
 </code></pre></div>
 <p>with:</p>
-<div class="highlight"><pre><span></span><code><span class="n">matlab_wrapper_2019</span><span class="w"> </span><span class="o">-</span><span class="n">nodisplay</span><span class="w"> </span><span class="o">-</span><span class="n">nodesktop</span><span class="w"> </span><span class="o">-</span><span class="n">batch</span><span class="w"> </span><span class="s">&quot;main_simulated_data_FINAL_clean(&quot;</span>$<span class="n">ind</span><span class="s">&quot;,&quot;</span>$<span class="nb">gamma</span><span class="s">&quot;,&quot;</span>$<span class="n">rw</span><span class="s">&quot;,&#39;&quot;</span>$<span class="n">SLURM_JOB_ID</span>&quot;<span class="s">&#39;</span><span class="err">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">matlab_wrapper_2019</span><span class="w"> </span><span class="o">-</span><span class="n">nodisplay</span><span class="w"> </span><span class="o">-</span><span class="n">nodesktop</span><span class="w"> </span><span class="o">-</span><span class="n">batch</span><span class="w"> </span><span class="s">"main_simulated_data_FINAL_clean("</span>$<span class="n">ind</span><span class="s">","</span>$<span class="nb">gamma</span><span class="s">","</span>$<span class="n">rw</span><span class="s">",'"</span>$<span class="n">SLURM_JOB_ID</span>"<span class="s">'</span><span class="err">)</span>
 </code></pre></div>
 <p>and this should allow scripts to run normally.</p>
 <h2 id="running-parallel-matlab-jobs-using-mdcs">Running parallel MATLAB jobs using MDCS</h2>
@@ -2128,31 +2128,31 @@ to our jobs, such as walltime, e-mail, etc. Other than <em>ProjectCode</em> and
 <p>NOTE: Any parameters specified using this workflow will be persistent
 between MATLAB sessions :</p>
 <div class="highlight"><pre><span></span><code><span class="c">% Get a handle to the cluster.</span>
-<span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">&#39;cirrus&#39;</span><span class="p">);</span>
+<span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">'cirrus'</span><span class="p">);</span>
 
 <span class="c">% Assign the project code for the job.  **[REQUIRED]**</span>
-<span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">ProjectCode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;project-code&#39;</span><span class="p">;</span>
+<span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">ProjectCode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">'project-code'</span><span class="p">;</span>
 
 <span class="c">% Specify the walltime (e.g. 5 hours).  **[REQUIRED]**</span>
-<span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">WallTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;05:00:00&#39;</span><span class="p">;</span>
+<span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">WallTime</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">'05:00:00'</span><span class="p">;</span>
 
 <span class="c">% Specify e-mail address to receive notifications about your job.</span>
-<span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">EmailAddress</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;your_name@your_address&#39;</span><span class="p">;</span>
+<span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">EmailAddress</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">'your_name@your_address'</span><span class="p">;</span>
 
 <span class="c">% Request a specific reservation to run your job.  It is better to</span>
 <span class="c">% use the queues rather than a reservation.</span>
-<span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">Reservation</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;your-reservation&#39;</span><span class="p">;</span>
+<span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">Reservation</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">'your-reservation'</span><span class="p">;</span>
 
 <span class="c">% Set the job placement (e.g., pack, excl, scatter:excl).</span>
 <span class="c">% Usually the default of free is what you want.</span>
-<span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">JobPlacement</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;pack&#39;</span><span class="p">;</span>
+<span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">JobPlacement</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">'pack'</span><span class="p">;</span>
 
 <span class="c">% Request to run in a particular queue.  Usually the default (no</span>
 <span class="c">% specific queue requested) will route the job to the correct queue.</span>
-<span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">QueueName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;queue-name&#39;</span><span class="p">;</span>
+<span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">QueueName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">'queue-name'</span><span class="p">;</span>
 
 <span class="c">% If you are using GPUs, request up to 4 GPUs per node (this will</span>
-<span class="c">% override a requested queue name and will use the &#39;gpu&#39; queue).</span>
+<span class="c">% override a requested queue name and will use the 'gpu' queue).</span>
 <span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">GpusPerNode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
 </code></pre></div>
 <p>Save changes after modifying <em>AdditionalProperties</em> fields :</p>
@@ -2165,7 +2165,7 @@ specific <em>AdditionalProperties</em> name :</p>
 <p>To clear a value, assign the property an empty value (<em>''</em>, <em>[]</em>, or
 <em>false</em>) :</p>
 <div class="highlight"><pre><span></span><code><span class="c">% Turn off email notifications.</span>
-<span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">EmailAddress</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="p">;</span>
+<span class="n">c</span><span class="p">.</span><span class="n">AdditionalProperties</span><span class="p">.</span><span class="n">EmailAddress</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">''</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="interactive-jobs">Interactive jobs</h3>
 <p>To run an interactive pool job on the cluster, use <em>parpool</em> as before.
@@ -2174,7 +2174,7 @@ number of MDCS workers available in our TAH licence. If you have your
 own MDCS licence, you can change this by setting <em>c.NumWorkers</em> and
 saving the profile. :</p>
 <div class="highlight"><pre><span></span><code><span class="c">% Open a pool of 32 workers on the cluster.</span>
-<span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parpool</span><span class="p">(</span><span class="s">&#39;cirrus&#39;</span><span class="p">,</span><span class="mi">32</span><span class="p">);</span>
+<span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parpool</span><span class="p">(</span><span class="s">'cirrus'</span><span class="p">,</span><span class="mi">32</span><span class="p">);</span>
 </code></pre></div>
 <p>Rather than running locally on one compute node machine, this pool can
 run across multiple nodes on the cluster :</p>
@@ -2194,7 +2194,7 @@ Cirrus, which usually has long queues. The <em>batch</em> command will return a
 job object which is used to access the output of the submitted job. See
 the MATLAB documentation for more help on <em>batch</em> :</p>
 <div class="highlight"><pre><span></span><code><span class="c">% Get a handle to the cluster.</span>
-<span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">&#39;cirrus&#39;</span><span class="p">);</span>
+<span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">'cirrus'</span><span class="p">);</span>
 
 <span class="c">% Submit job to query where MATLAB is running on the cluster.</span>
 <span class="nb">j</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">batch</span><span class="p">(@</span><span class="nb">pwd</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">{});</span>
@@ -2213,7 +2213,7 @@ the MATLAB documentation for more help on <em>batch</em> :</p>
 an array of jobs that were run, are running, or are queued to run. This
 allows you to fetch the results of completed jobs. Retrieve and view the
 list of jobs as shown below :</p>
-<div class="highlight"><pre><span></span><code><span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">&#39;cirrus&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">'cirrus'</span><span class="p">);</span>
 <span class="n">jobs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">Jobs</span>
 </code></pre></div>
 <p>Once you have identified the job you want, you can retrieve the results
@@ -2242,7 +2242,7 @@ following example (<em>parallel_example.m</em>) for a parallel job :</p>
 
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="nb">nargin</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">16</span><span class="p">;</span><span class="w"> </span><span class="k">end</span>
 
-<span class="w">  </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Start sim&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">disp</span><span class="p">(</span><span class="s">'Start sim'</span><span class="p">)</span>
 
 <span class="w">  </span><span class="n">t0</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">tic</span><span class="p">;</span>
 <span class="w">  </span><span class="k">parfor</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">iter</span>
@@ -2251,15 +2251,15 @@ following example (<em>parallel_example.m</em>) for a parallel job :</p>
 <span class="w">  </span><span class="k">end</span>
 <span class="w">  </span><span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="nb">toc</span><span class="p">(</span><span class="n">t0</span><span class="p">);</span>
 
-<span class="w">  </span><span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Sim completed.&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="nb">disp</span><span class="p">(</span><span class="s">'Sim completed.'</span><span class="p">)</span>
 </code></pre></div>
 <p>Use the <em>batch</em> command again, but since you are running a parallel job,
 you also specify a MATLAB Pool :</p>
 <div class="highlight"><pre><span></span><code><span class="c">% Get a handle to the cluster.</span>
-<span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">&#39;cirrus&#39;</span><span class="p">);</span>
+<span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">'cirrus'</span><span class="p">);</span>
 
 <span class="c">% Submit a batch pool job using 4 workers for 16 simulations.</span>
-<span class="nb">j</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">batch</span><span class="p">(@</span><span class="n">parallel_example</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s">&#39;Pool&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="nb">j</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">batch</span><span class="p">(@</span><span class="n">parallel_example</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s">'Pool'</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
 
 <span class="c">% View current job status.</span>
 <span class="nb">j</span><span class="p">.</span><span class="n">State</span>
@@ -2282,10 +2282,10 @@ retrieve the results later, keep track of the job ID.</p>
 allocating too many workers, as the overhead may exceed computation
 time. :</p>
 <div class="highlight"><pre><span></span><code><span class="c">% Get a handle to the cluster.</span>
-<span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">&#39;cirrus&#39;</span><span class="p">);</span>
+<span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">'cirrus'</span><span class="p">);</span>
 
 <span class="c">% Submit a batch pool job using 8 workers for 16 simulations.</span>
-<span class="nb">j</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">batch</span><span class="p">(@</span><span class="n">parallel_example</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s">&#39;Pool&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
+<span class="nb">j</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">batch</span><span class="p">(@</span><span class="n">parallel_example</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s">'Pool'</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span>
 
 <span class="c">% Get the job ID</span>
 <span class="n">id</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">j</span><span class="p">.</span><span class="n">ID</span>
@@ -2300,10 +2300,10 @@ time. :</p>
 <p>Once you have a handle to the cluster, call the <em>findJob</em> method to
 search for the job with the specified job ID :</p>
 <div class="highlight"><pre><span></span><code><span class="c">% Get a handle to the cluster.</span>
-<span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">&#39;cirrus&#39;</span><span class="p">);</span>
+<span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parcluster</span><span class="p">(</span><span class="s">'cirrus'</span><span class="p">);</span>
 
 <span class="c">% Find the old job</span>
-<span class="nb">j</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">findJob</span><span class="p">(</span><span class="s">&#39;ID&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="nb">j</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">findJob</span><span class="p">(</span><span class="s">'ID'</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
 
 <span class="c">% Retrieve the state of the job.</span>
 <span class="nb">j</span><span class="p">.</span><span class="n">State</span>
@@ -2436,10 +2436,10 @@ GPU with another user.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["tabs"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["tabs"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
